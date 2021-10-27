@@ -95,7 +95,7 @@ async def mentionall(event):
         usrtxt = ""
         
         
-   if mode == "text_on_reply":
+  if mode == "text_on_reply":
     moment_worker.append(event.chat_id)
     
     usrnum = 0
