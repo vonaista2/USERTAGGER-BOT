@@ -27,7 +27,7 @@ async def cancel(event):
   
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("𝙷𝙴𝙻𝙻𝙾 𝙸'𝙼 𝚂𝙽𝙴𝙷𝙰𝙱𝙷𝙸 𝚄𝚂𝙴𝚁𝚃𝙰𝙶𝙶𝙴𝚁 𝙱𝙾𝚃.𝙼𝙰𝙳𝙴 𝚆𝙸𝚃𝙷 𝙻𝙾𝙱 𝙱𝚈 [ABHI & SNEHU](HTTP://T.ME/SNEHABHI_UPDATES). 𝙽𝙴𝙴𝙳 𝙷𝙴𝙻𝙿 /help",
+  await event.reply("𝙷𝙴𝙻𝙻𝙾 𝙸'𝙼 𝚂𝙽𝙴𝙷𝙰𝙱𝙷𝙸 𝚄𝚂𝙴𝚁𝚃𝙰𝙶𝙶𝙴𝚁 𝙱𝙾𝚃.𝙼𝙰𝙳𝙴 𝚆𝙸𝚃𝙷 𝙻𝙾𝙱 𝙱𝚈 [ABHI & SNEHU](HTTP://T.ME/SNEHABHI_UPDATES). 𝙽𝙴𝙴𝙳 𝙷𝙴𝙻𝙿 /help . 𝙵𝙾𝚁 𝚁𝙴𝙿𝙾 /repository ",
                     buttons=(
                       [Button.url('🙃 𝙶𝚁𝙾𝚄𝙿 𝙼𝙴 𝙳𝙰𝙻 𝙳𝙴 𝙳𝙴𝙺𝙷 𝙼𝚃 🥺✨', 'https://t.me/SNEHABHI_TAGGERBOT?startgroup=true')],
                       [Button.url('𝙵𝙾𝚁 𝙰𝙽𝚈 𝙸𝚂𝚂𝚄𝙴 𝙹𝙾𝙸𝙽 𝙾𝚄𝚁 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙶𝚁𝙾𝚄𝙿', 'https://t.me/SNEHABHI_SERVER')],
@@ -46,6 +46,16 @@ async def help(event):
                       [Button.url('🙃 𝙶𝚁𝙾𝚄𝙿 𝙼𝙴 𝙳𝙰𝙻 𝙳𝙴 𝙳𝙴𝙺𝙷 𝙼𝚃 🥺✨', 'https://t.me/SNEHABHI_TAGGERBOT?startgroup=true')],
                       [Button.url('𝙵𝙾𝚁 𝙰𝙽𝚈 𝙸𝚂𝚂𝚄𝙴 𝙹𝙾𝙸𝙽 𝙾𝚄𝚁 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙶𝚁𝙾𝚄𝙿', 'https://t.me/SNEHABHI_SERVER')],
                       [Button.url('𝙵𝙾𝚁 𝙻𝙰𝚃𝙴𝚂𝚃 𝚄𝙿𝙳𝙰𝚃𝙴𝚂 𝙹𝙾𝙸𝙽 𝙾𝚄𝚁 𝙲𝙷𝙰𝙽𝙽𝙴𝙻', 'https://t.me/SNEHABHI_UPDATES')]
+                      ),
+                    link_preview=False
+                    )
+  
+@client.on(events.NewMessage(pattern="^/repository$"))
+async def repository(event):
+  snehabhitext = "**𝙳𝙴𝙿𝙻𝙾𝚈 𝙾𝚄𝚁 𝙾𝚆𝙽 𝙱𝙾𝚃**"
+  await event.reply(snehabhitext,
+                    buttons=(
+                      [Button.url('𝚁𝙴𝙿𝙾𝚂𝙸𝚃𝙾𝚁𝚈', 'http://t.me/SNEHABHI_UPDATES')]
                       ),
                     link_preview=False
                     )
