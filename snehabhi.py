@@ -86,7 +86,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
-        await event.respond("Stopped!")
+        await event.respond("𝚂𝚃𝙾𝙿𝙿𝙴𝙳! 𝙹𝙾𝙸𝙽 @SNEHABHI_UPDATES")
         return
       if usrnum == 5:
         await client.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
@@ -104,7 +104,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
-        await event.reply("Stopped")
+        await event.reply("𝚂𝚃𝙾𝙿𝙿𝙴𝙳! 𝙹𝙾𝙸𝙽 @SNEHABHI_UPDATES")
         return
       if usrnum == 5:
         await client.send_message(event.chat_id, usrtxt, reply_to=msg)
