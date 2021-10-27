@@ -36,9 +36,7 @@ async def start(event):
                     link_preview=False
                     )
 
-#𝚆𝙰𝙰𝙷 𝙱𝙷𝙰𝙸𝙼𝚈𝙰 𝙵𝚄𝙻𝙻 𝙸𝙼𝙶𝙽𝙾𝚁𝙴𝙱𝙰𝚉𝙸
 
-#𝙲𝚁𝙴𝙳𝙸𝚃 𝙳𝙴 𝙳𝙴𝙽𝙰 𝚆𝙰𝚁𝙽𝙰 𝙼𝙰 𝙲𝙷𝙾𝙳 𝙳𝙴𝙽𝙶𝙴
 
 @client.on(events.NewMessage(pattern="^/tag ?(.*)"))
 async def help(event):
@@ -52,5 +50,69 @@ async def help(event):
                     link_preview=False
                     )
   
-                    
-                      
+#𝚆𝙰𝙰𝙷 𝙱𝙷𝙰𝙸𝙼𝚈𝙰 𝙵𝚄𝙻𝙻 𝙸𝙼𝙶𝙽𝙾𝚁𝙴𝙱𝙰𝚉𝙸
+
+#𝙲𝚁𝙴𝙳𝙸𝚃 𝙳𝙴 𝙳𝙴𝙽𝙰 𝚆𝙰𝚁𝙽𝙰 𝙼𝙰 𝙲𝙷𝙾𝙳 𝙳𝙴𝙽𝙶𝙴
+
+@client.on(events.NewMessage(pattern="^/tag ?(.*)"))
+async def mentionall(event):
+  global moment_worker
+  if event.is_private:
+    return await event.reply("𝚄𝚂𝙴 𝚃𝙷𝙸𝚂 𝙸𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 𝙾𝚁 𝙶𝚁𝙾𝚄𝙿𝚂!")
+  
+  admins = []
+  async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
+    admins.append(admin.id)
+  if not event.sender_id in admins:
+    return await event.reply("𝙾𝙽𝙻𝚈 𝙰𝙳𝙼𝙸𝙽 𝙲𝙰𝙽 𝚄𝚂𝙴 𝙸𝚃.")
+    
+  if event.pattern_match.group(1):
+    mode = "text_on_cmd"
+    msg = event.pattern_match.group(1)
+  elif event.reply_to_msg_id:
+    mode = "text_on_reply"
+    msg = event.reply_to_msg_id
+    if msg == None:
+        return await event.reply("𝙸 𝙲𝙰𝙽'𝚃 𝙼𝙴𝙽𝚃𝙸𝙾𝙽 𝙼𝙴𝙼𝙱𝙴𝚁𝚂 𝙵𝙾𝚁 𝙾𝙻𝙳 𝙿𝙾𝚂𝚃")
+  elif event.pattern_match.group(1) and event.reply_to_msg_id:
+    return await event.reply("𝙶𝙸𝚅𝙴 𝙼𝙴 𝙲𝙰𝙽 𝙰𝙽 𝙰𝚁𝙶𝚄𝙼𝙴𝙽𝚃. 𝙴𝚇𝙰𝙼𝙿𝙻𝙴: `/tag 𝙺𝙰𝙷𝙰 𝙼𝙰𝚁 𝚁𝙰𝙷𝙴 𝙷𝙾 𝚂𝙰𝙱`")
+  else:
+    return await event.reply("𝚁𝙴𝙿𝙻𝚈 𝚃𝙾 𝙼𝚂𝙶 𝙾𝚁 𝙶𝙸𝚅𝙴 𝚂𝙾𝙼𝙴 𝚃𝙴𝚇𝚃 𝚃𝙾 𝙼𝙴𝙽𝚃𝙸𝙾𝙽!")
+  if mode == "text_on_cmd":
+    moment_worker.append(event.chat_id)
+    usrnum = 0
+    usrtxt = ""
+    async for usr in client.iter_participants(event.chat_id):
+      usrnum += 1
+      usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
+      if event.chat_id not in moment_worker:
+        await event.respond("Stopped!")
+        return
+      if usrnum == 5:
+        await client.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
+        await asyncio.sleep(2)
+        usrnum = 0
+        usrtxt = ""
+        
+        
+   if mode == "text_on_reply":
+    moment_worker.append(event.chat_id)
+    
+    usrnum = 0
+    usrtxt = ""
+    async for usr in client.iter_participants(event.chat_id):
+      usrnum += 1
+      usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
+      if event.chat_id not in moment_worker:
+        await event.reply("Stopped")
+        return
+      if usrnum == 5:
+        await client.send_message(event.chat_id, usrtxt, reply_to=msg)
+        await asyncio.sleep(2)
+        usrnum = 0
+        usrtxt = ""
+        
+        
+print("𝚂𝙽𝙴𝙷𝙰𝙱𝙷𝙸 𝚄𝚂𝙴𝚁𝚃𝙰𝙶𝙶𝙴𝚁 𝙱𝙾𝚃 𝙸𝚂 𝚂𝚃𝙰𝚁𝚃𝙴𝙳")
+print("¯\_(ツ)_/¯ 𝙽𝙴𝙴𝙳 𝙷𝙴𝙻𝙿 𝙹𝙾𝙸𝙽 @SNEHABHI_SERVER")
+client.run_until_disconnected()
