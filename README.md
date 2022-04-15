@@ -1,4 +1,4 @@
-# USERTAGGER-BOT
+# RAPİDT@G MENTİON BOT
 
 <img src="https://telegra.ph/file/571f7d4c22a126cfe99c3.jpg">
 
@@ -6,8 +6,8 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Vonaista2/USERTAGGER-BOT)
 
-###𝙹𝙾𝙸𝙽 𝙵𝙾𝚁 𝙰𝙽𝚈 𝙸𝚂𝚂𝚄𝙴
+###BİLGİ İÇİN
 
-- [Channel](https://t.me/SNEHABHI_UPDATES)
+- [DESTEK](https://t.me/RapidDestek)
 
-- [Group](https://t.me/SNEHABHI_SERVER)
+- [DEVELOPER](https://t.me/EfsaneLions)
