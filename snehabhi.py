@@ -1,5 +1,5 @@
-#SNEHABHI USERTAGGER BOT
-#I LOVE YOU SNEHU😘
+#RAPİD T@G MENTION BOT
+#DEVELOPER @EfsaneLions😘
 
 import os, logging, asyncio
 from telethon import Button
@@ -27,9 +27,9 @@ async def cancel(event):
   
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("MERHABA. BEN RAPİDT@G. GRUBUNUZDA SİZİN YERİNİZE ETİKET ATABİLİRİM. DESTEK KANALIMIZ İÇİN [RAPİD DESTEK](HTTP://T.ME/RapidDestek). YARDIM MENÜSÜ İÇİN /help YAZIN.",
+  await event.reply("MERHABA. BEN RAPİD T@G. GRUBUNUZDA SİZİN YERİNİZE ETİKET ATABİLİRİM. DESTEK KANALIMIZ İÇİN [RAPİD DESTEK](HTTP://T.ME/RapidDestek). YARDIM MENÜSÜ İÇİN /help YAZIN.",
                     buttons=(
-                      [Button.url('🙃 GRUBA EKLE 🙂', 'https://t.me/TagDenemeBot?startgroup=true')],
+                      [Button.url('🙃 GRUBA EKLE 🙂', 'https://t.me/rapidtagbot?startgroup=true')],
                       [Button.url('DESTEK KANALIMIZ', 'https://t.me/RapidDestek')],
                       [Button.url('DEVELOPER', 'https://t.me/EfsaneLions')]
                       ),
@@ -40,10 +40,10 @@ async def start(event):
 
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "***RAPİD TAG YARDIM MENÜSÜ**\n\nCommand: /all \n YAZARAK ETİKET İŞLEMİNİ BAŞLATABİLİRSİNİZ \n`ÖRNEK: /all GÜNAYDIN!` \nAYNI KOMUTU BİR MESAJA YANIT VEREREK O MESAJA KULLANICILARI ETİKETLEYEBİLİRSİNİZ. /bitir KOMUTU ETİKETLEME İŞLEMİNİ BİTİRİR"
+  helptext = "***RAPİD T@G YARDIM MENÜSÜ**\n\nKOMUT: /all \n YAZARAK ETİKET İŞLEMİNİ BAŞLATABİLİRSİNİZ \n`ÖRNEK: /all GÜNAYDIN!` \nAYNI KOMUTU BİR MESAJA YANIT VEREREK O MESAJA KULLANICILARI ETİKETLEYEBİLİRSİNİZ. /bitir KOMUTU ETİKETLEME İŞLEMİNİ BİTİRİR"
   await event.reply(helptext,
                     buttons=(
-                      [Button.url('🙃 GRUBA EKLE 🙂', 'https://t.me/tagdenemebot?startgroup=true')],
+                      [Button.url('🙃 GRUBA EKLE 🙂', 'https://t.me/rapidtagbot?startgroup=true')],
                       [Button.url('DESTEK KANALIMIZ', 'https://t.me/RapidDestek')],
                       [Button.url('DEVELOPER', 'https://t.me/efsanelions')]
                       ),
@@ -61,9 +61,9 @@ async def bot(event):
                     link_preview=False
                     )
   
-#𝚆𝙰𝙰𝙷 𝙱𝙷𝙰𝙸𝙼𝚈𝙰 𝙵𝚄𝙻𝙻 𝙸𝙼𝙶𝙽𝙾𝚁𝙴𝙱𝙰𝚉𝙸
+#RAPID DESTEK @RapidDestek
 
-#𝙲𝚁𝙴𝙳𝙸𝚃 𝙳𝙴 𝙳𝙴𝙽𝙰 𝚆𝙰𝚁𝙽𝙰 𝙼𝙰 𝙲𝙷𝙾𝙳 𝙳𝙴𝙽𝙶𝙴
+#DEVELOPER @EfsaneLions
 
 @client.on(events.NewMessage(pattern="^/all ?(.*)"))
 async def mentionall(event):
@@ -97,7 +97,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
-        await event.respond("İŞLEM DURDURULDU! 🟥")
+        await event.respond("𝔼𝕥𝕚𝕜𝕖𝕥𝕝𝕖𝕞𝕖 𝔻𝕦𝕣𝕕𝕦𝕣𝕦𝕝𝕕𝕦! 🟥")
         return
       if usrnum == 5:
         await client.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
@@ -115,7 +115,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
-        await event.reply("İŞLEM DURDURULDU! 🟥")
+        await event.reply("𝔼𝕥𝕚𝕜𝕖𝕥𝕝𝕖𝕞𝕖 𝔻𝕦𝕣𝕕𝕦𝕣𝕦𝕝𝕕𝕦! 🟥")
         return
       if usrnum == 5:
         await client.send_message(event.chat_id, usrtxt, reply_to=msg)
@@ -124,6 +124,6 @@ async def mentionall(event):
         usrtxt = ""
         
         
-print("TAG DENEME BOTUNU BAŞLATIN")
+print("RAPID T@G BOTUNU BAŞLATIN")
 print("¯\_(ツ)_/¯ DEVELOPER @EfsaneLions")
 client.run_until_disconnected()
